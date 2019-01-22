@@ -18,4 +18,18 @@ export class AppComponent {
     new Task('Think about group project'),
     new Task('Work on resume')
   ]
+
+  editTask(){
+    this.tasks[0].description = "hello";
+    console.log("red is ", this.isRed);
+    setInterval(() => {
+      this.isRed = !this.isRed;
+      console.log("red is ", this.isRed);
+    }, 500);
+  }
+
+  isRed = true;
+  getBig() {
+    return true;
+    }
 }
