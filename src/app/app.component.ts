@@ -24,6 +24,7 @@ export class AppComponent {
     task.description += "+";
   }
 
+  user="me";
   isRed = true;
   getBig(task) {
     if(task.priority == 1 ){
