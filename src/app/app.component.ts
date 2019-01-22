@@ -23,7 +23,11 @@ export class AppComponent {
     this.selectedTask = task;
   }
 
-  selectedTask: Task = this.tasks[0];
+  finishedEditing() {
+    this.selectedTask = null;
+  }
+
+  selectedTask: Task = null;
   user="me";
   isRed = true;
   getBig(task) {
