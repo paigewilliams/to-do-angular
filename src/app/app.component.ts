@@ -14,22 +14,26 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
 
   tasks: Task[] = [
-    new Task('Do Homework'),
-    new Task('Think about group project'),
-    new Task('Work on resume')
+    new Task('Do Homework', 1),
+    new Task('Think about group project', 2),
+    new Task('Work on resume', 3)
   ]
 
-  editTask(){
-    this.tasks[0].description = "hello";
-    console.log("red is ", this.isRed);
-    setInterval(() => {
-      this.isRed = !this.isRed;
-      console.log("red is ", this.isRed);
-    }, 500);
+  editTask(task){
+    console.log("task", task);
+    task.description += "+";
   }
 
   isRed = true;
-  getBig() {
-    return true;
+  getBig(task) {
+    if(task.priority == 1 ){
+      return "bg-danger";
     }
+    if(task.priority == 2){
+      return "bg-warning";
+    }
+    else {
+      return "bg-info";
+    }
+  }
 }
