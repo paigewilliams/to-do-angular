@@ -20,10 +20,10 @@ export class AppComponent {
   ]
 
   editTask(task){
-    console.log("task", task);
-    task.description += "+";
+    this.selectedTask = task;
   }
 
+  selectedTask: Task = this.tasks[0];
   user="me";
   isRed = true;
   getBig(task) {
